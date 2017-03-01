@@ -4,23 +4,24 @@
 </head>
 <body>
 	
-	<div class="header">
 	
-	<header>
+	
+    
+	
+	
+
+	<div class='container'>
+		
+		<header>
         {{>navbar}}
     </header>
 
 		<div class="login">
 			{{> loginButtons}}
 		</div>
-    
-	
-	</div>
-
-    <main>
-        <!--{{>city}}
-        {{>home}}    -->
+		
         {{>yield}}
-    </main>
+    </div>
+
 </body>
 </template>

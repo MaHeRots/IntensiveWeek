@@ -1,14 +1,15 @@
 
+
+
 body{
-	font-family:'Open Sans',Arial,sans-serif;
-	margin-left:10%;
-	margin-right:10%;
+	font-family:'Open Sans',Arial,sans-serif;	
 }
 
 
 .logo1{
-display:none;
-margin-right:80px;
+position:relative;
+float:right;
+
 
 }
 
@@ -16,10 +17,10 @@ margin-right:80px;
 
 display:inline-block;
 margin-right:80px;
-margin-top:40px;
+margin-top:80px;
 padding:5px 10px;
 color:black;
-font-size:1.8rem;
+font-size:2.2rem;
 float:left;
 
 }
@@ -35,61 +36,75 @@ background-color:#9B272D;
 }
 
 .login{
-display:inline-block;
-color:black;
 float:right;
-margin:40px;
-font-family:'Open Sans',Arial,sans-serif;
+width:180px;
+color:black;
+margin-top:180px;
+margin-right:-40px;
 font-size:1.8rem;
 border-top:3px solid #9B272D;
 padding-top:10px;
+padding-left:80px;
 }
 
 
 
 .h1{
-margin-top:80px;
+margin-top:120px;
 display:inline-block;
 border-bottom:3px solid #9B272D;
 padding-bottom:15px;
+padding-right:100px;
 }
 
 
 .p1{
 float:right;
 text-align:right;
-margin:80px;
-line-height:20px;
-width:60%;
+margin-top:80px;
+margin-right:10%;
+line-height:40px;
+width:40%;
 display:inline-block;
 }
 
 
-.cityhome{
-position:relative;
+
+
+.img-wrapper{
+	margin-top:100px;
+	
+    height:320px;
+    overflow:hidden;
+    width: 100%; /* it is only important to be bigger then parent for one image width size */
+	position : relative;
+}
+.img-home {
+	  width: 100%;
 }
 
-
-
-.img-home{
-position:relative;
-margin-top:100px;
-width:85%;
-height:400px;
-z-index:1;
+.img-wrapper span {
+	position : absolute;
+	top : 40%;
+	left : 30%;
+	color:white;
+	font-size:4rem;
+	padding:10px;
 }
 
-.cityname{
-position:relative;
-color:white;
-font-size:4rem;
-text-align:center;
-z-index:;
-display:flex;
-z-index:2;
+.visit {
+	position : absolute;
+	right : 0;
+	width : 8%;
+	height:320px;
+	margin : 0;
+	background-color :#9B272D ;
+	z-index : 4;
+	color:white;
+	text-align:center;
+	font-size:4rem;
+	padding:10px;
 }
-
-
 
 
 
