@@ -18,3 +18,4 @@ Template.main.events({
     
   }
 });
+
