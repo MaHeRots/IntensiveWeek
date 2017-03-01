@@ -1,40 +1,27 @@
+<template name =" main">
 <head>
     <title>Visiting Cities !</title>
-   <!-- <script>
-        function submitme() {
-            form = {
-                cName = cName.value,
-                cLat = cLat.value,
-                cLong = cLong.value
-            };
-            
-            cities.insert(form, function(err))
-            {
-                          if(!err){
-                alert("Submitted")
-                cName = '';
-                cLat = '';
-                cLong =   '';
-            }
-            else {
-                alert("Something is wrong");
-                console.log(err);
-            }
-                          }
-        }
-    </script> -->
+
 </head>
 <body>
-    <header>
+	
+	<div class="header">
+	
+	<header>
         {{>navbar}}
     </header>
-    {{>loginButtons}}
+
+		<div class="login">
+			{{> loginButtons}}
+		</div>
+    
+	
+	</div>
+
     <main>
-        {{>home}}
+        {{>yield}}
     </main>
-    <div>
-    {{> loginButtons}}
-    </div>
+    
     {{#if currentUser}}
     <div>
         <fieldset legend="Create New City">
@@ -52,3 +39,4 @@
     </div>
     {{/if}}
 </body>
+</template>
