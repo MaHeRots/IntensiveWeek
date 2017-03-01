@@ -6,7 +6,7 @@
     <div class="cityhome">
 
 
-        <h2>Current Cities</h2>
+        
     {{#each c in cities}}
         <div class='row'>
 			
@@ -15,7 +15,7 @@
 				<div class='visit' href='/city/{{c._id}}'>
 
 			<a  class="avisit" href='/city/{{c._id}}'>V<br />I<br />S<br />I<br />T<br /></a></div>
-        
+				<div class="grey"></div>
 			
 			<span class="cityname" >{{c.name}}</span>
         
@@ -28,10 +28,9 @@
     </div>
         
  {{#if currentUser}}
-    <div class="creat">
-        <fieldset legend="Create New City">
-			<h2 class="h2">Creat your city</h2>
-			
+    
+		<h2 class="h2">Creat your city</h2>
+        <fieldset legend="Create New City" class="table">
         <form id="myForm" class="addCity" >
             <input id="cName" type="text" name="cName"  placeholder="City Name" />
             <br />
@@ -39,11 +38,12 @@
                    placeholder="Latitude" />
             <br />
             <input id="cLong" type="text" name="cLong"  placeholder="Longitude" />
-            <input type="submit" value="Submit">
+            <br />          
         </form>
+			<input type="submit" value="Submit" class="button">
         </fieldset>
         
-    </div>
+    
  {{/if}}
 </template>
 
