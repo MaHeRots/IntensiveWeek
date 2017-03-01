@@ -12,7 +12,7 @@
 			<div class='col-md-10 img-wrapper'>
 				<div class='visit' href='/city/{{c._id}}'>
 
-			<a  href='/city/{{c._id}}'>V<br />I<br />S<br />I<br />T<br /></a></div>
+			<a  class="avisit" href='/city/{{c._id}}'>V<br />I<br />S<br />I<br />T<br /></a></div>
         
 			
 			<span class="cityname" >{{c.name}}</span>
@@ -26,8 +26,10 @@
     </div>
         
  {{#if currentUser}}
-    <div>
+    <div class="creat">
         <fieldset legend="Create New City">
+			<h2 class="h2">Creat your city</h2>
+			
         <form id="myForm" class="addCity" >
             <input id="cName" type="text" name="cName"  placeholder="City Name" />
             <br />
@@ -37,9 +39,9 @@
             <input id="cLong" type="text" name="cLong"  placeholder="Longitude" />
             <input type="submit" value="Submit">
         </form>
-            </fieldset>
+        </fieldset>
         
     </div>
-    {{/if}}
+ {{/if}}
 </template>
 
