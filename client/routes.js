@@ -7,6 +7,10 @@ Router.route("Home", {
     template: "Home",   
 });
 
+Router.route("/", {
+    template: "Home",   
+});
+
 Router.route("charts", {
     template: "charts", 
 });
