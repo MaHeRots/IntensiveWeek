@@ -4,7 +4,8 @@
     <h2>Current Cities</h2>
     
     {{#each c in cities}}
-        {{c.name}}
+        <a href='/city/{{c._id}}'>{{c.name}}</a>
+        <img src='{{c.picture}}' />
     {{/each}}
     
 </template>
