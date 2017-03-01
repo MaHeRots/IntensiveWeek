@@ -22,6 +22,7 @@
     
          {{#each a in activities}}
     <div class='activities'>
+        <img class="img-event" src='{{a.picture}}' />
         <a class='activity' href='cities/activities/{{a._id}}'>{{a.name}}</a>
     </div>
         {{/each}}
