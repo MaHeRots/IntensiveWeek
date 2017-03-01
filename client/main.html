@@ -1,12 +1,37 @@
+<template name ="main">
 <head>
     <title>Visiting Cities !</title>
+
 </head>
 <body>
-    <header>
+	
+	
+	
+    
+	
+	
+
+	<div class='container'>
+		
+		<header>
         {{>navbar}}
     </header>
-    {{> loginButtons}}
-    <main>
-        {{>home}}
+
+		<div class="login">
+			{{> loginButtons}}
+		</div>
+		
+		<main>
+        {{>yield}}
     </main>
+    
+   
+
+    </div>
+
+
+
+    
+
 </body>
+</template>

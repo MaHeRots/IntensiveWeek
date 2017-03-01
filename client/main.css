@@ -1,0 +1,131 @@
+
+
+
+body{
+	font-family:'Open Sans',Arial,sans-serif;	
+}
+
+
+.logo1{
+position:relative;
+float:right;
+
+
+}
+
+.menu>a{
+
+display:inline-block;
+margin-right:80px;
+margin-top:80px;
+padding:5px 10px;
+color:black;
+font-size:2.2rem;
+float:left;
+
+}
+
+
+.menu>a:hover{
+
+color:white;
+text-decoration:none;
+
+background-color:#9B272D;
+
+}
+
+.login{
+float:right;
+width:180px;
+color:black;
+margin-top:200px;
+
+font-size:1.8rem;
+border-top:3px solid #9B272D;
+padding-top:10px;
+padding-left:80px;
+}
+
+
+
+.h1{
+margin-top:120px;
+display:inline-block;
+border-bottom:3px solid #9B272D;
+padding-bottom:15px;
+padding-right:100px;
+}
+
+
+.p1{
+float:right;
+text-align:right;
+margin-top:80px;
+margin-right:10%;
+line-height:40px;
+width:40%;
+display:inline-block;
+}
+
+
+.grey{
+	position:absolute;
+	background-color:black;
+	opacity:0.6;
+
+	width:100%;
+	height:320;
+	z-index:2;
+}
+
+.img-wrapper{
+
+	margin-top:100px;
+	
+    height:320px;
+    overflow:hidden;
+    width: 100%; /* it is only important to be bigger then parent for one image width size */
+	position : relative;
+}
+.img-home {
+	  width: 100%;
+}
+
+.img-wrapper span {
+
+	position : absolute;
+	top : 40%;
+	left : 30%;
+	color:white;
+	font-size:4rem;
+	padding:10px;
+	z-index:3;
+}
+
+.visit {
+	position : absolute;
+	right : 0;
+	width : 8%;
+	height:320px;
+	margin : 0;
+	background-color :#9B272D ;
+	z-index : 4;
+	color:white;
+	text-align:center;
+	font-size:4rem;
+	padding:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

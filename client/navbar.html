@@ -1,3 +1,26 @@
 <template name='navbar'>
-hello
+	<div class="menu">
+		<img src="/images/homepage/logo1.png" class="logo1" width="200">
+		<a href="{{pathFor route='Home'}}">Home</a>
+		<a href="{{pathFor route='charts'}}">Charts</a>
+		<a href="{{pathFor route='about'}}">About</a>
+        <a href="#" id='reset'>Reset</a>
+	</div>
+</template>
+
+
+<template name='Home'>
+    {{>home}}
+</template>
+
+<template name='charts'>
+    <h3> Here we have the Charts</h3>
+</template>
+
+<template name='about'>
+    <h3> All about us</h3>
+</template>
+
+<template name='notFound'>
+    <h3> Sorry it's not Found !</h3>
 </template>
