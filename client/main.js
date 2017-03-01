@@ -1,4 +1,4 @@
-Template.body.events({
+Template.main.events({
   'submit .addCity': function (event) {alert("hello");
     // Prevent default browser form submit
     event.preventDefault();

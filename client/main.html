@@ -1,4 +1,4 @@
-<template name =" main">
+<template name ="main">
 <head>
     <title>Visiting Cities !</title>
 
@@ -22,21 +22,6 @@
         {{>yield}}
     </main>
     
-    {{#if currentUser}}
-    <div>
-        <fieldset legend="Create New City">
-        <form id="myForm" class="addCity" >
-            <input id="cName" type="text" name="cName"  placeholder="City Name" />
-            <br />
-            <input id="cLat" type="text" name="cLat"
-                   placeholder="Latitude" />
-            <br />
-            <input id="cLong" type="text" name="cLong"  placeholder="Longitude" />
-            <input type="submit" value="Submit">
-        </form>
-            </fieldset>
-        
-    </div>
-    {{/if}}
+   
 </body>
 </template>
