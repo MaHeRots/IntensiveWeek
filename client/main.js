@@ -1,5 +1,5 @@
 Template.main.events({
-  'submit .addCity': function (event) {alert("hello");
+  'submit .addCity': function (event) {
     // Prevent default browser form submit
     event.preventDefault();
     
