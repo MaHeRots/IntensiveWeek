@@ -27,3 +27,21 @@ Router.route('/city/:id', {
         return Cities.findOne({_id:this.params.id});
     }
 });
+
+Router.route('/activity/:_id', {
+    template: "activity",
+    data : function () {
+        var id = this.params._id;
+        // Return the document for the selected city (the one whose id is given)
+        // The value of this id is given by  this.params.id
+        return Activities.findOne({_id:id});
+    }
+});
+
+//Router.route('/activity/:id', {
+//    var act = Cities.findOne({_id : this.params.id});
+//    if (typeof activities == "undefined")
+//        this.render("notFound");
+//    else
+//        this.render("activity", {data : act});
+//});
