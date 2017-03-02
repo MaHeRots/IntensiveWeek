@@ -13,31 +13,95 @@
    </template>
 
 <template name='city'>
-            <h3> About {{name}} </h3>
-    <img class="img-article" src='{{picture}}'/>
+            <h3 class="h3"> Welcome to {{name}} </h3>
+            
+    <div class='col-md-10 img-wrapper'>        
+    <img class="img-home" src='{{picture}}'/>
+    </div>
+    <div class="description">
+		<p class="p2">{{{description}}}</p>
+	</div>
     
-    <p>{{{description}}}</p>
     
-        <h3>Places</h3>
+        <h3 class="h1">Places</h3>
     
          {{#each a in activities}}
-    {{#if isAplace a.nature}}
-    <div class='activities'>
-        <img class="img-event" src='{{a.picture}}' />
-        <a class='activity' href='/activity/{{a._id}}'>{{a.name}}</a>
+
+         {{#if isAplace a.nature}}
+         
+    <div class='row'>
+	<div class='col-md-10 img-wrapper'>
+		
+		<div class='visit'>
+		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
+		</div>
+		<div class="grey"></div>
+		
+		<span class="cityname" >{{a.name}}</span>
+		<img class="img-home" src='{{a.picture}}' />
     </div>
-    {{/if}}
+    </div>
+		{{/if}}
+
         {{/each}}
+        
+        
     
-        <h3>Events</h3>
+    
+        <h3 class="h1">Events</h3>
     
         {{#each a in activities}}
+<<<<<<< HEAD
     {{#if isAnEvent a.nature}}
     <div class='activities'>
         <img class="img-event" src='{{a.picture}}' />
         <a class='activity' href='/activity/{{a._id}}'>{{a.name}}</a>
     </div>
     {{/if}}
+=======
+
+        {{#if isAnEvent a.nature}}
+
+         <div class='row'>
+		<div class='col-md-10 img-wrapper'>
+		
+		<div class='visit'>
+		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
+		</div>
+		<div class="grey"></div>
+		
+		<span class="cityname" >{{a.name}}</span>
+		<img class="img-home" src='{{a.picture}}' />
+    </div>
+    </div>
+		{{/if}}
+>>>>>>> 0ac25ae41f29bade9a4ec8688ee7b96c17c0bd95
         {{/each}}
+        
+                
+ {{#if currentUser}}
+    
+		<h2 class="h2">Create your Event</h2>
+        <fieldset legend="Create New Event" class="table">
+        <form id="myForm" class="addEvent" >
+            <input id="eName" type="text" name="eName"  placeholder="Event Name" />
+            <br />
+            <input id="desc" type="text" name="desc"
+                   placeholder="Description" />
+            <br />
+            <input id="url" type="text" name="url"  placeholder="Event URL" />
+            <br />  
+            <input id="dateStart" type="date" name="dateStart" placeholder="Event Start">
+            <br />
+            <input id="dateEnd" type="date" name="dateEnd" placeholder="Event End">
+            <br />
+            <input type="submit" value="Create" class="button" >
+            
+        </form>
+			
+        </fieldset>
+        
+    
+ {{/if}}
     
 </template>  

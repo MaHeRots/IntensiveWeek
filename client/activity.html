@@ -1,0 +1,21 @@
+<template name='activity'>
+    
+<body>
+    {{#each a in activities}}
+    <h1>{{a.name}}</h1>
+    {{#each p in a.pictures}}
+    <img class="img-event" src='{{p}}' />
+    {{/each}}
+    <p>{{a.text}}</p>
+    <p>{{a.description}}</p>
+    <p> Author : {{a.editor.email}}</p>
+     {{#if haveAlink a}}   
+    <p> link : <a href='{{activities.url}}'>{{a.url}}</a></p>
+    {{/if}}
+   {{/each}}
+    
+
+</body>
+    
+    
+</template>
