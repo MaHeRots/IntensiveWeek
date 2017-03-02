@@ -21,19 +21,23 @@
         <h3>Places</h3>
     
          {{#each a in activities}}
+    {{#if isAplace a.nature}}
     <div class='activities'>
         <img class="img-event" src='{{a.picture}}' />
         <a class='activity' href='cities/activities/{{a._id}}'>{{a.name}}</a>
     </div>
+    {{/if}}
         {{/each}}
     
         <h3>Events</h3>
     
         {{#each a in activities}}
+    {{#if isAnEvent a.nature}}
     <div class='activities'>
         <img class="img-event" src='{{a.picture}}' />
         <a class='activity' href='cities/activities/{{a._id}}'>{{a.name}}</a>
     </div>
+    {{/if}}
         {{/each}}
     
 </template>  
