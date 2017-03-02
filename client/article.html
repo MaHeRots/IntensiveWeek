@@ -33,7 +33,7 @@
 	<div class='col-md-10 img-wrapper'>
 		
 		<div class='visit'>
-		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
+		<a  class="avisit" href='/activity/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
 		</div>
 		<div class="grey"></div>
 		
@@ -51,14 +51,6 @@
         <h3 class="h1">Events</h3>
     
         {{#each a in activities}}
-<<<<<<< HEAD
-    {{#if isAnEvent a.nature}}
-    <div class='activities'>
-        <img class="img-event" src='{{a.picture}}' />
-        <a class='activity' href='/activity/{{a._id}}'>{{a.name}}</a>
-    </div>
-    {{/if}}
-=======
 
         {{#if isAnEvent a.nature}}
 
@@ -75,7 +67,7 @@
     </div>
     </div>
 		{{/if}}
->>>>>>> 0ac25ae41f29bade9a4ec8688ee7b96c17c0bd95
+
         {{/each}}
         
                 
