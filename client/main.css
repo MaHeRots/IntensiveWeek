@@ -82,16 +82,14 @@ display:inline-block;
 
 .img-wrapper{
 	z-index:1;
-
 	margin-top:100px;
-	
     height:320px;
     overflow:hidden;
     width: 100%; /* it is only important to be bigger then parent for one image width size */
 	position : relative;
 }
 .img-home {
-	  width: 100%;
+	width: 100%;
 }
 
 .img-wrapper span {
@@ -158,15 +156,54 @@ width:400px;
 height:50px;
 }
 
-.button{
+.addCity>button{
 	width:400px;
 	padding:5px;
-	background-color: #9B272D;
+	background: #9B272D;
 	border:none;
 	color:white;
 	font-size:2rem;
 	text-align:center;
 }
+
+
+.h3{
+	margin-top:200px;
+	display:inline-block;
+	background-color: #9B272D;
+	border:none;
+	color:white;
+	font-size:4rem;
+	text-align:center;
+	padding:15px 60px;
+}
+
+.p2{
+
+text-align:justify;
+margin-top:80px;
+font-size:1.8rem;
+line-height:40px;
+width:100%;
+display:inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

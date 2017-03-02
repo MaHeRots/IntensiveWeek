@@ -13,27 +13,51 @@
    </template>
 
 <template name='city'>
-            <h3> About {{name}} </h3>
-    <img class="img-article" src='{{picture}}'/>
+            <h3 class="h3"> Welcome to {{name}} </h3>
+            
+    <div class='col-md-10 img-wrapper'>        
+    <img class="img-home" src='{{picture}}'/>
+    </div>
+    <div class="description">
+		<p class="p2">{{{description}}}</p>
+	</div>
     
-    <p>{{{description}}}</p>
     
-        <h3>Places</h3>
+        <h3 class="h1">Places</h3>
     
          {{#each a in activities}}
-    <div class='activities'>
-        <img class="img-event" src='{{a.picture}}' />
-        <a class='activity' href='cities/activities/{{a._id}}'>{{a.name}}</a>
+         
+    <div class='row'>
+	<div class='col-md-10 img-wrapper'>
+		
+		<div class='visit'>
+		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a></div>
+		<div class="grey"></div>
+		
+		<span class="cityname" >{{a.name}}</span>
+		<img class="img-home" src='{{a.picture}}' />
+    </div>
     </div>
         {{/each}}
+        
+        
     
-        <h3>Events</h3>
+    
+        <h3 class="h1">Events</h3>
     
         {{#each a in activities}}
-    <div class='activities'>
-        <img class="img-event" src='{{a.picture}}' />
-        <a class='activity' href='cities/activities/{{a._id}}'>{{a.name}}</a>
+         <div class='row'>
+	<div class='col-md-10 img-wrapper'>
+		
+		<div class='visit'>
+		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a></div>
+		<div class="grey"></div>
+		
+		<span class="cityname" >{{a.name}}</span>
+		<img class="img-home" src='{{a.picture}}' />
     </div>
+    </div>
+    
         {{/each}}
     
 </template>  
