@@ -145,9 +145,24 @@ if (Meteor.isServer) {
                 picture: '/images/Boulogne/centre.jpg',
                 activities: []
             };
+            
+            var dublin = {
+                _id: "c2",
+                name: "Dublin",
+                coordinates: {
+                    long: "6.266155",
+                    lat: "53.350140"
+                },
+                description: "Dublin is the small capital with a huge reputation for great craic. Known around the world for its awesome atmosphere, its excellent experiences and its premier pubs. <br /> Whether you are going with your family or your mates, for your first time or your tenth, Dublin will provide plenty of activities to entertain you. With an amazing selection of hotels from the budget conscience to the extravagant, you will feel at home. So all we have left to say is Céad Míle Fáilte."
+            },
+            picture: '/images/Dublin/dublin-top-ten-hapenny-bridge-bg.jpg',
+            activities: []
+        };
+        
             Cities.remove({});
             Cities.insert(aix);
             Cities.insert(boulogne);
+            Cities.insert(dublin);
         },
     })
 }
