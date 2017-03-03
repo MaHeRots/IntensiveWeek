@@ -188,13 +188,17 @@ display:inline-block;
 }
 
 .map-container {
-  width: 100%;
+  width: 50%;
   max-width: 100%;
-  height: 500px;
+  height: 320px;
 }
 
 
-
+.addEvent>input{
+border:3px solid #9B272D;
+width:400px;
+height:50px;
+}
 
 
 

@@ -77,10 +77,9 @@ Template.city.events({
     var eName = $("#eName").val();
       var desc = $("#desc").val();
       var url = $("#url").val(); 
-      var user = $("#login-name-link").val();
+	  alert("hello");
       var dateStart = $("#dateStart").val();
       var dateEnd = $("#dateEnd").val();
-      alert(user);
     // Insert a task into the collection
     Activities.insert({
       name: eName, nature: "event", description: desc, url : url, dateStart: dateStart, dateEnd: dateEnd
