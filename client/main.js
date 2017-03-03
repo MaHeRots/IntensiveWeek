@@ -9,9 +9,10 @@ Template.main.events({
     var cName = $("#cName").val();
       var cLat = $("#cLat").val();
       var cLong = $("#cLong").val(); 
+      var cDesc = $("#cDesc").val();
     // Insert a task into the collection
     Cities.insert({
-      name: cName, long: cLong, lat: cLat
+      name: cName, long: cLong, lat: cLat, description: cDesc
     });
 
     // Clear form
