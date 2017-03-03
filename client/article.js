@@ -55,8 +55,11 @@ if (Meteor.isClient) {
   Template.map.helpers({
     mapOptions: function() {
       if (GoogleMaps.loaded()) {
+          var cityName = document.getElementById("cityName").innerHTML;
+          var longLat = Cities.findOne({"name": cityName});
+          console.log(longLat.lat);
         return {
-          center: new google.maps.LatLng(-37.8136, 144.9631),
+          center: new google.maps.LatLng(longLat.lat, longLat.long),
           zoom: 8
         };
       }
