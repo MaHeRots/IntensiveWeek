@@ -21,19 +21,19 @@ Template.activity.helpers({
         return Activities.findOne({});
     },
     haveAlink : function(){
-    return typeof Template.currentData().url != "undefined";
+        //console.log("hl",Template.currentData().url != "undefined");
+        //return typeof Template.currentData().url != "undefined";
+        return true;
     },                  
     like : function() {
-            var like = Activities.findOne({
-            _id: Template.currentData().likers.length,
-            /*likers: Meteor.user().likers*/});
-            var likers = Activities.findOne({_id: Template.currentData().likers})
-//            if(typeof like === "undefined")
-//                return "It's perfect";
-//            else 
-//                return "It's perfect too";
+        console.log("hi !");
+            //var like = Activities.findOne({
+            //    _id: Template.currentData().likers.length});
+    //return like;
+        return Template.currentData().likers.length;
     }
-  });
+    
+});
 Template.activity.events({                    
     'click #nL' : function(event){
         console.log("j'aime !"+ this.name);
@@ -41,7 +41,6 @@ Template.activity.events({
         console.log("user:",Meteor.user())
         if(Meteor.userId() === null){
         }else{
-       /* update({_id:Template.cerrentData()}*/
        var like = Activities.findOne({
            _id: Template.currentData()._id,
            likers: Meteor.user()._id
@@ -52,10 +51,6 @@ Template.activity.events({
             else 
                 Activities.update({_id: Template.currentData()._id},
                                   {$pull:{likers: Meteor.user()._id}});
-                
-        /*activities.insert({
-            like : 1 
-        });*/
     }
     }
   });
