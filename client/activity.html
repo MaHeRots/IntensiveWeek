@@ -1,15 +1,17 @@
 <template name='activity'>
     
 <body>
-    <h1>{{name}}</h1>
+    <h1 class="h3">{{name}}</h1>
     {{#each p in pictures}}
-    <img class="img-event" src='{{p}}' />
+    <div class='col-md-10 img-wrapper'> 
+    <img class="img-home" src='{{p}}' />
     {{/each}}
-    <p>{{text}}</p>
-    <p>{{description}}</p>
-    <p> Author : {{editor.email}}</p>
+    <p class="p2">{{text}}</p>
+    <p class="p2">{{description}}</p>
+    <p class="p2"> Author : {{editor.email}}</p>
      {{#if haveAlink}}   
-    <p> link : <a href='{{url}}'>{{url}}</a></p>
+    <p class="p2"> Go to Web page : <a href='{{url}}'>{{url}}</a></p>
+    </div>
     {{/if}}
     
     
@@ -19,10 +21,13 @@
     {{/each}}
     
     {{#if currentUser}}
-    <form>
-        <textarea id='comment'>
+    
+    <h5 class="h2">Add your comment</h5>
+    <form class="comment">
+        <textarea id='comment' class="addComment">
         </textarea>
-        <input type='submit' />
+        <br />
+        <input type='submit' class="button"/>
     </form>
     
     {{/if}}
@@ -33,3 +38,6 @@
     
     
 </template>
+
+
+
