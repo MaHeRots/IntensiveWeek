@@ -33,34 +33,28 @@ Template.activity.helpers({
 //                return "It's perfect too";
 //    }
   });
-//Template.activity.events({                    
-//    'submit form': function (event) {
-//        event.preventDefault();
-//         var id = $("#delete").val();
-//        alert(id);
-//       // Activitis.remove({_id:id})
-//    },
-//    'click #nL' : function(event){
-//        console.log("j'aime !"+ this.name);
-//        console.log("data:",Template.currentData());
-//        console.log("user:",Meteor.user())
-//        if(Meteor.userId() === null){
-//        }else{
-//       /* update({_id:Template.cerrentData()}*/
-//       var like = Activities.findOne({
-//           _id: Template.currentData()._id,
-//           likers: Meteor.user()._id
-//       });
-//            if(typeof like == "undefined")
-//                Activities.update({_id: Template.currentData()._id},
-//                                  {$push:{likers: Meteor.user()._id}});
-//            else 
-//                Activities.update({_id: Template.currentData()._id},
-//                                  {$pull:{likers: Meteor.user()._id}});
-//                
-//        /*activities.insert({
-//            like : 1 
-//        });*/
-//    }
-//    }
-//  });
+Template.activity.events({                    
+    'click #nL' : function(event){
+        console.log("j'aime !"+ this.name);
+        console.log("data:",Template.currentData());
+        console.log("user:",Meteor.user())
+        if(Meteor.userId() === null){
+        }else{
+       /* update({_id:Template.cerrentData()}*/
+       var like = Activities.findOne({
+           _id: Template.currentData()._id,
+           likers: Meteor.user()._id
+       });
+            if(typeof like == "undefined")
+                Activities.update({_id: Template.currentData()._id},
+                                  {$push:{likers: Meteor.user()._id}});
+            else 
+                Activities.update({_id: Template.currentData()._id},
+                                  {$pull:{likers: Meteor.user()._id}});
+                
+        /*activities.insert({
+            like : 1 
+        });*/
+    }
+    }
+  });
