@@ -1,44 +1,4 @@
-if (Meteor.isServer) {
-    Meteor.methods({
-        // reset database
-        reset: function () {
-            var derek = {
-                "_id": "u0",
-                "createdAt": new Date("2016-02-04T09:28:14.187Z"),
-                "services": {
-                    "password": {
-                        "bcrypt": "$2a$10$5J/u4IF59xW8Xi73eQajzu5rnF2bcvXaKKQaye.Njh3knctvLnuf6" // derek.ie
-                    },
-                    "resume": {
-                        "loginTokens": []
-                    }
-                },
-                "emails": [{
-                        "address": "derek@dkit.ie",
-                        "verified": false
-      }
-  ]
-            };
-            var gilles = {
-                "_id": "u1",
-                "createdAt": new Date("2016-02-04T09:29:14.662Z"),
-                "services": {
-                    "password": {
-                        "bcrypt": "$2a$10$PtpfLpKrWd3/AbQz1CCL6ubnHpWd2D.QVvQSJLoL.WPKpQjZCGIi." //gilles.fr
-                    },
-                    "resume": {
-                        "loginTokens": []
-                    }
-                },
-                "emails": [{
-                        "address": "gilles@iut.fr",
-                        "verified": false
-      }
-  ]
-            };
-            Meteor.users.remove({});
-            Meteor.users.insert(derek);
-            Meteor.users.insert(gilles);
+
 
             // *** activities
             var granet = {
@@ -102,10 +62,35 @@ if (Meteor.isServer) {
                 dateStart: new Date('2016-6-15'),
                 dateEnd: new Date('2016-7-10')
             };
+            
+            var trinity = { 
+                id: "c2a0",
+                name: "Trinity College",
+                nature: "place",
+                editor: {
+                    _id: derek._id,
+                    email: derek.emails[0].address
+                },
+                pictures: [
+                    "images/Dublin/TrinityCollegeDublin.jpg"
+                ], 
+                comments: [{
+                    user: {
+                        _id: derek._id,
+                        email: derek.emails[0].address
+                    },
+                    date: new Date(),
+                    text: "Fantastic College"
+  }],           
+               description: "Located in a beautiful campus in the heart of Dublin’s city centre, Trinity is Ireland’s highest ranked university and one of the world’s top 100.  It is home to 17,000 undergraduate and postgraduate students across all the major disciplines in the arts and humanities, and in business, law, engineering, science, and health sciences. It has the Book of Kells, an illuminated manuscript Gospel book in Latin, containing the four Gospels of the New Testament together with various prefatory texts and tables. It was created in a Columban monastery in Ireland or may have had contributions from various Columban institutions from both Britain and Ireland. It is believed to have been created c. 800 AD.",
+                url: "https://www.tcd.ie/"
+            }
+            
             Activities.remove({})
             Activities.insert(granet);
             Activities.insert(saintSauveur);
             Activities.insert(festival);
+            //Activities.insert(trinity);
 
             // **** cities
             var aix = {
@@ -150,13 +135,20 @@ if (Meteor.isServer) {
                 _id: "c2",
                 name: "Dublin",
                 coordinates: {
-                    long: "6.266155",
-                    lat: "53.350140"
+                    lat: "-6.266155",
+                    long: "53.350140"
                 },
                 description: "Dublin is the small capital with a huge reputation for great craic. Known around the world for its awesome atmosphere, its excellent experiences and its premier pubs. <br /> Whether you are going with your family or your mates, for your first time or your tenth, Dublin will provide plenty of activities to entertain you. With an amazing selection of hotels from the budget conscience to the extravagant, you will feel at home. So all we have left to say is Céad Míle Fáilte."
             ,
             picture: '/images/Dublin/dublin-top-ten-hapenny-bridge-bg.jpg',
-            activities: []
+            activities: [
+                {
+                    _id: trinity._id,
+                    name: trinity.name,
+                    nature: trinity.nature,
+                    picture: trinity.pictures[0]
+                }
+            ]
         }
         
             Cities.remove({});
@@ -166,3 +158,4 @@ if (Meteor.isServer) {
         },
     })
 }
+

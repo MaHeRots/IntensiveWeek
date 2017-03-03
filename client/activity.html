@@ -1,15 +1,74 @@
 <template name='activity'>
     
 <body>
-    <h1>{{name}}</h1>
-    {{#each p in pictures}}
-    <img class="img-event" src='{{p}}' />
-    {{/each}}
-    <p>{{text}}</p>
-    <p>{{description}}</p>
-    <p> Author : {{editor.email}}</p>
+    <h1 class="h3">{{name}}</h1>
+    
+    
+    
+    <div class='col-md-10 img-wrapper'> 
+		
+	 <div id = "myCarousel" class = "carousel slide">
+                
+                <!-- Indicateurs pour caroussel -->
+                <ol class = "carousel-indicators">
+                    <li data-target = "#myCarousel" data-slide-to = "0" class ="active"></li>
+                    <li data-target = "#myCarousel" data-slide-to = "1"></li>
+                </ol>
+                
+                <!-- Mise en place du contenu pour le Caroussel -->
+                <div class = "carousel-inner"> 
+					
+					<div class="item active">    
+                       
+                    
+                        <img  src = "/images/homepage/cover_4.png"  class = "img-responsive img-slide" style="width:100%;height:100%;">
+                 
+                    </div>
+                   
+			 {{#each p in pictures}}
+                    <div class = "item">
+                        <img src = '{{p}}' alt = "img1" class = "img-responsive" width="100%">
+                    </div>   
+              {{/each}}      
+                </div>
+                
+                <!-- Contrôles du Caroussel -->
+                <a class = "carousel-control left" href = "#myCarousel" role="button" data-slide = "prev">
+                    <span class = "icon-prev"></span>
+                </a>
+                
+                <a class = "carousel-control right" href = "#myCarousel" role="button" data-slide = "next">
+                    <span class = "icon-next"></span>
+                </a>
+            </div>	
+		
+		
+		
+		
+		</div>
+    
+		
+		
+		
+		
+		
+
+    
+    <p class="p2">{{text}}</p>
+    
+    <div class="like">
+    <p id="nL">J'aime</p>
+        <p> {{like}}</p>
+        <p> {{likers}}</p>
+     </div>
+    
+    
+    
+    <p class="p2">{{description}}</p>
+    <p class="p2"> Author : {{editor.email}}</p>
      {{#if haveAlink}}   
-    <p> link : <a href='{{url}}'>{{url}}</a></p>
+    <p class="p2"> Go to Web page : <a href='{{url}}'>{{url}}</a></p>
+    
     {{/if}}
     
     
@@ -19,19 +78,27 @@
     {{/each}}
     
     {{#if currentUser}}
-    <form>
-        <textarea id='comment'>
+    
+    <h5 class="h2">Add your comment</h5>
+    <form class="comment">
+        <textarea id='comment' class="addComment">
         </textarea>
-        <input type='submit' />
+        <br />
+        <input type='submit' class="button"/>
     </form>
     
     {{/if}}
+
 <div class="like">
     <p id="nL">J'aime</p>
         <p> {{like}}</p>
         <p> They liked :{{likers}}</p>
      </div>
+
 </body>
     
     
 </template>
+
+
+
