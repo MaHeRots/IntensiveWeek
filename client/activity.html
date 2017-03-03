@@ -2,16 +2,73 @@
     
 <body>
     <h1 class="h3">{{name}}</h1>
-    {{#each p in pictures}}
+    
+    
+    
     <div class='col-md-10 img-wrapper'> 
-    <img class="img-home" src='{{p}}' />
-    {{/each}}
+		
+	 <div id = "myCarousel" class = "carousel slide">
+                
+                <!-- Indicateurs pour caroussel -->
+                <ol class = "carousel-indicators">
+                    <li data-target = "#myCarousel" data-slide-to = "0" class ="active"></li>
+                    <li data-target = "#myCarousel" data-slide-to = "1"></li>
+                </ol>
+                
+                <!-- Mise en place du contenu pour le Caroussel -->
+                <div class = "carousel-inner"> 
+					
+					<div class="item active">    
+                       
+                    
+                        <img  src = "/images/homepage/cover_4.png"  class = "img-responsive img-slide" style="width:100%;height:100%;">
+                 
+                    </div>
+                   
+			 {{#each p in pictures}}
+                    <div class = "item">
+                        <img src = '{{p}}' alt = "img1" class = "img-responsive" width="100%">
+                    </div>   
+              {{/each}}      
+                </div>
+                
+                <!-- Contrôles du Caroussel -->
+                <a class = "carousel-control left" href = "#myCarousel" role="button" data-slide = "prev">
+                    <span class = "icon-prev"></span>
+                </a>
+                
+                <a class = "carousel-control right" href = "#myCarousel" role="button" data-slide = "next">
+                    <span class = "icon-next"></span>
+                </a>
+            </div>	
+		
+		
+		
+		
+		</div>
+    
+		
+		
+		
+		
+		
+
+    
     <p class="p2">{{text}}</p>
+    
+    <div class="like">
+    <p id="nL">J'aime</p>
+        <p> {{like}}</p>
+        <p> {{likers}}</p>
+     </div>
+    
+    
+    
     <p class="p2">{{description}}</p>
     <p class="p2"> Author : {{editor.email}}</p>
      {{#if haveAlink}}   
     <p class="p2"> Go to Web page : <a href='{{url}}'>{{url}}</a></p>
-    </div>
+    
     {{/if}}
     
     
@@ -31,11 +88,7 @@
     </form>
     
     {{/if}}
-<div class="like">
-    <p id="nL">J'aime</p>
-        <p> {{like}}</p>
-        <p> {{likers}}</p>
-     </div>
+
 </body>
     
     
