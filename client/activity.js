@@ -23,15 +23,16 @@ Template.activity.helpers({
     haveAlink : function(){
     return typeof Template.currentData().url != "undefined";
     },                  
-//    like : function() {
-//            var like = Activities.findOne({
-//            _id: Template.currentData()._id,
-//            likers: Meteor.user()._id});
+    like : function() {
+            var like = Activities.findOne({
+            _id: Template.currentData().likers.length,
+            /*likers: Meteor.user().likers*/});
+            var likers = Activities.findOne({_id: Template.currentData().likers})
 //            if(typeof like === "undefined")
 //                return "It's perfect";
 //            else 
 //                return "It's perfect too";
-//    }
+    }
   });
 Template.activity.events({                    
     'click #nL' : function(event){
