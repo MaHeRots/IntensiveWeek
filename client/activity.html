@@ -1,25 +1,36 @@
 <template name='activity'>
     
 <body>
-    {{#each a in activities}}
-    <h1>{{a.name}}</h1>
-    {{#each p in a.pictures}}
+    <h1>{{name}}</h1>
+    {{#each p in pictures}}
     <img class="img-event" src='{{p}}' />
     {{/each}}
-    <p>{{a.text}}</p>
-    <p>{{a.description}}</p>
-    <p> Author : {{a.editor.email}}</p>
-     {{#if haveAlink a}}   
-    <p> link : <a href='{{activities.url}}'>{{a.url}}</a></p>
+    <p>{{text}}</p>
+    <p>{{description}}</p>
+    <p> Author : {{editor.email}}</p>
+     {{#if haveAlink}}   
+    <p> link : <a href='{{url}}'>{{url}}</a></p>
     {{/if}}
-   {{/each}}
     
+    
+    <h4>Comments</h4>
+    {{#each c in comments}}
+    <p>{{c.user.email}} said {{c.text}}</p><br />
+    {{/each}}
+    
+    {{#if currentUser}}
+    <form>
+        <textarea id='comment'>
+        </textarea>
+        <input type='submit' />
+    </form>
+    
+    {{/if}}
+<!--
 <div class="like">
-     <!--<img src = alt = "like" class="icon" id="L">
-     <img src = alt = "dislike" class="icon" id="dL">
-    <img src = {{like}} alt = "nolike" class="icon" id="nL">-->
         <p> {{like}}</p>
      </div>
+-->
 </body>
     
     
