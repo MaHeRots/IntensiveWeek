@@ -57,10 +57,9 @@ if (Meteor.isClient) {
       if (GoogleMaps.loaded()) {
           var cityName = document.getElementById("cityName").innerHTML;
           var longLat = Cities.findOne({"name": cityName});
-          console.log(longLat.lat);
         return {
-          center: new google.maps.LatLng(longLat.lat, longLat.long),
-          zoom: 8
+          center: new google.maps.LatLng(longLat.coordinates.long, longLat.coordinates.lat),
+          zoom: 10
         };
       }
     }
