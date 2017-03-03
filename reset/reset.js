@@ -1,4 +1,45 @@
 
+if (Meteor.isServer) {
+    Meteor.methods({
+        // reset database
+        reset: function () {
+            var derek = {
+                "_id": "u0",
+                "createdAt": new Date("2016-02-04T09:28:14.187Z"),
+                "services": {
+                    "password": {
+                        "bcrypt": "$2a$10$5J/u4IF59xW8Xi73eQajzu5rnF2bcvXaKKQaye.Njh3knctvLnuf6" // derek.ie
+                    },
+                    "resume": {
+                        "loginTokens": []
+                    }
+                },
+                "emails": [{
+                        "address": "derek@dkit.ie",
+                        "verified": false
+      }
+  ]
+            };
+            var gilles = {
+                "_id": "u1",
+                "createdAt": new Date("2016-02-04T09:29:14.662Z"),
+                "services": {
+                    "password": {
+                        "bcrypt": "$2a$10$PtpfLpKrWd3/AbQz1CCL6ubnHpWd2D.QVvQSJLoL.WPKpQjZCGIi." //gilles.fr
+                    },
+                    "resume": {
+                        "loginTokens": []
+                    }
+                },
+                "emails": [{
+                        "address": "gilles@iut.fr",
+                        "verified": false
+      }
+  ]
+            };
+            Meteor.users.remove({});
+            Meteor.users.insert(derek);
+            Meteor.users.insert(gilles);
 
             // *** activities
             var granet = {
@@ -148,14 +189,14 @@
                     nature: trinity.nature,
                     picture: trinity.pictures[0]
                 }
-            ]
+            ],
         }
         
             Cities.remove({});
             Cities.insert(aix);
             Cities.insert(boulogne);
             Cities.insert(dublin);
-        },
+       },
     })
 }
 
