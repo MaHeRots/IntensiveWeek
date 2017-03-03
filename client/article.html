@@ -14,7 +14,9 @@
 
 <template name='city'>
 
-            <h3 class="h3"> Welcome to <p id="cityName">{{name}}</p> </h3>
+
+           <h3 class="h3"> Welcome to <p id="cityName">{{name}}</p> </h3>
+
             
     <div class='col-md-10 img-wrapper'>        
     <img class="img-home" src='{{picture}}'/>
@@ -32,7 +34,7 @@
          {{#if isAplace a.nature}}
          
     <div class='row'>
-	<div class='col-md-10 img-wrapper'>
+	<div class='col-md-10 img-wrapper' style=" background: url('{{a.picture}}') center no-repeat; background-size : cover;">
 		
 		<div class='visit'>
 		<a  class="avisit" href='/activity/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
@@ -40,7 +42,7 @@
 		<div class="grey"></div>
 		
 		<span class="cityname" >{{a.name}}</span>
-		<img class="img-home" src='{{a.picture}}' />
+		
     </div>
     </div>
 		{{/if}}
@@ -57,7 +59,7 @@
         {{#if isAnEvent a.nature}}
 
          <div class='row'>
-		<div class='col-md-10 img-wrapper'>
+		<div class='col-md-10 img-wrapper' style=" background: url('{{a.picture}}') center no-repeat; background-size : cover;">
 		
 		<div class='visit'>
 		<a  class="avisit" href='cities/activities/{{a._id}}'>V<br />I<br />S<br />I<br />T<br /></a>
@@ -65,7 +67,7 @@
 		<div class="grey"></div>
 		
 		<span class="cityname" >{{a.name}}</span>
-		<img class="img-home" src='{{a.picture}}' />
+		
     </div>
     </div>
 		{{/if}}
