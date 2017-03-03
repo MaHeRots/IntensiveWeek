@@ -22,6 +22,7 @@
 		<p class="p2">{{{description}}}</p>
 	</div>
     
+    {{> map}}
     
         <h3 class="h1">Places</h3>
     
@@ -67,9 +68,10 @@
     </div>
     </div>
 		{{/if}}
+       {{/each}}
 
-        {{/each}}
-        
+    
+     
                 
  {{#if currentUser}}
     
@@ -96,4 +98,12 @@
     
  {{/if}}
     
-</template>  
+</template>
+
+
+
+<template name = "map">
+<div class = "map-container">
+    {{> googleMap name="map" options=mapOptions}}
+    </div>
+</template>
